@@ -14,10 +14,14 @@ app.use(passport.initialize());
 // Importing passport file into server
 require('./config/passport')(passport);
 
+const users = require('./routes/api/users');
+
 
 app.get('/', (req, res) =>{
     res.status(200),json({ message: 'Smile, you are being watched by the Backend a Team'})
 });
+
+app.use('/api/users', users);
 
 app.listen(port, () =>{
     console.log(`Server is running on port: ${port}`)
