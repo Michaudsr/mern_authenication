@@ -6,6 +6,7 @@ const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const mongoose = require('mongoose');
 const { deserializeUser } = require('passport');
+const db = require('../models')
 //const User = mongoose.model('User')
 
 
@@ -34,6 +35,6 @@ module.exports = (passport) => {
             return done(null, false); 
             }
         })
-        .catch(error => console.loc(error));
+        .catch(error => console.log(error));
     }))
 }

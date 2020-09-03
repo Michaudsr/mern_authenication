@@ -5,6 +5,8 @@ const cors = require('cors');
 const port = process.env.PORT || 8000;
 const passport = require('passport');
 
+const users = require('./routes/api/users');
+
 // Middleware
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
@@ -14,7 +16,7 @@ app.use(passport.initialize());
 // Importing passport file into server
 require('./config/passport')(passport);
 
-const users = require('./routes/api/users');
+
 
 
 app.get('/', (req, res) =>{
