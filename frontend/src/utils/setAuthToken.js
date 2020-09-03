@@ -1,7 +1,6 @@
 import axios from 'axios';
-import { delete } from '../../../backend/routes/api/users';
 
-// This utility will add the authorized users JWT to the request header
+// This utility will add the authorized user's JWT to the request header
 // Any routes that are protected will require the JWT in order to access them
 
 const setAuthToken = token => {
